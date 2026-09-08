@@ -1,0 +1,10 @@
+export { default as Sidebar } from './Sidebar';
+export { default as Header } from './Header';
+export { default as DashboardOverview } from './DashboardOverview';
+export { default as StatsCard } from './StatsCard';
+export { default as QuickActions } from './QuickActions';
+export { default as QueueTable } from './QueueTable';
+export { default as PatientsList } from './PatientsList';
+export { default as PatientRegistration } from './PatientRegistration';
+export { default as AppointmentsList } from './AppointmentsList';
+export { default as NotificationsPanel } from './NotificationsPanel';

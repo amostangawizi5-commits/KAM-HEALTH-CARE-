@@ -1,0 +1,141 @@
+.appointments-container {
+  background: #ffffff;
+  border: 1px solid #cfe7d5;
+  border-radius: 8px;
+  padding: 24px;
+  box-shadow: 0 2px 10px rgba(21, 128, 61, 0.06);
+}
+
+.appointments-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-bottom: 22px;
+}
+
+.new-appointment-btn,
+.checkin-btn {
+  min-height: 38px;
+  border: 1px solid #15803d;
+  border-radius: 8px;
+  background: #15803d;
+  color: #ffffff;
+  padding: 0 16px;
+  font: inherit;
+  font-size: 13px;
+  font-weight: 900;
+  cursor: pointer;
+}
+
+.new-appointment-btn:hover,
+.checkin-btn:hover {
+  background: #166534;
+}
+
+.appointments-section {
+  margin-bottom: 22px;
+}
+
+.table-wrapper {
+  overflow-x: auto;
+  border: 1px solid #dcefe2;
+  border-radius: 8px;
+}
+
+.appointments-table {
+  width: 100%;
+  min-width: 760px;
+  border-collapse: collapse;
+  background: #ffffff;
+}
+
+.appointments-table thead {
+  background: #e7f6eb;
+}
+
+.appointments-table th,
+.appointments-table td {
+  padding: 14px 16px;
+  text-align: left;
+  border-bottom: 1px solid #dcefe2;
+}
+
+.appointments-table th {
+  color: #14532d;
+  font-size: 12px;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.appointments-table td {
+  color: #12301f;
+  font-size: 14px;
+}
+
+.appointments-table tbody tr:hover {
+  background: #f2fbf5;
+}
+
+.appointments-table tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+.time-cell,
+.patient-name-cell {
+  font-weight: 900;
+}
+
+.status-badge-app {
+  display: inline-flex;
+  border: 1px solid #9fd3ad;
+  border-radius: 999px;
+  background: #e7f6eb;
+  color: #14532d;
+  padding: 5px 12px;
+  font-size: 12px;
+  font-weight: 900;
+}
+
+.view-btn-app {
+  min-height: 34px;
+  border: 1px solid #cfe7d5;
+  border-radius: 8px;
+  background: #ffffff;
+  color: #477858;
+  padding: 0 14px;
+  font: inherit;
+  font-size: 13px;
+  font-weight: 900;
+  cursor: default;
+}
+
+.search-section {
+  margin-top: 16px;
+}
+
+.search-input {
+  width: 100%;
+  min-height: 44px;
+  border: 1px solid #cfe7d5;
+  border-radius: 8px;
+  background: #ffffff;
+  color: #12301f;
+  padding: 0 14px;
+  font: inherit;
+  font-size: 14px;
+}
+
+.search-input:focus {
+  outline: none;
+  border-color: #15803d;
+  box-shadow: 0 0 0 3px rgba(21, 128, 61, 0.12);
+}
+
+.empty-state {
+  text-align: center;
+  padding: 40px 20px;
+  color: #477858;
+  font-size: 14px;
+}

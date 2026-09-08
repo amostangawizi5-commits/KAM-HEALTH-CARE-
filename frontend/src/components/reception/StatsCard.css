@@ -1,0 +1,52 @@
+.stats-card-receptionist {
+  min-height: 108px;
+  background: #ffffff;
+  border: 1px solid #cfe7d5;
+  border-left: 4px solid #15803d;
+  border-radius: 8px;
+  padding: 18px 20px;
+  display: flex;
+  align-items: center;
+  box-shadow: 0 2px 10px rgba(21, 128, 61, 0.06);
+}
+
+.stats-card-receptionist:hover {
+  border-color: #15803d;
+}
+
+.stats-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.stats-label {
+  margin: 0 0 8px;
+  color: #477858;
+  font-size: 13px;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.stats-value-wrapper {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.stats-value {
+  margin: 0;
+  color: #12301f;
+  font-size: 32px;
+  font-weight: 900;
+  letter-spacing: 0;
+}
+
+.stats-change {
+  border-radius: 999px;
+  background: #e7f6eb;
+  color: #14532d;
+  padding: 4px 10px;
+  font-size: 12px;
+  font-weight: 900;
+}

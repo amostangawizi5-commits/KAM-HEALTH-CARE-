@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-label="Medical care background">
+  <defs>
+    <linearGradient id="room" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#dceff2"/>
+      <stop offset="0.46" stop-color="#f6fbfb"/>
+      <stop offset="1" stop-color="#b7d8df"/>
+    </linearGradient>
+    <linearGradient id="floor" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#a9bec4"/>
+      <stop offset="1" stop-color="#e6eeee"/>
+    </linearGradient>
+  </defs>
+  <rect width="1600" height="900" fill="url(#room)"/>
+  <rect y="610" width="1600" height="290" fill="url(#floor)"/>
+  <path d="M0 615 C260 570 410 666 650 620 C900 573 1070 544 1600 625 L1600 900 L0 900 Z" fill="#d9e5e7"/>
+  <rect x="88" y="118" width="360" height="300" rx="28" fill="#ffffff" opacity="0.82"/>
+  <rect x="114" y="148" width="150" height="18" rx="9" fill="#ed1c24"/>
+  <rect x="114" y="190" width="280" height="16" rx="8" fill="#b9cdd2"/>
+  <rect x="114" y="224" width="230" height="16" rx="8" fill="#cfdddf"/>
+  <rect x="114" y="280" width="286" height="90" rx="16" fill="#eaf3f5"/>
+  <path d="M240 304 h42 v-42 h48 v42 h42 v48 h-42 v42 h-48 v-42 h-42z" fill="#ed1c24" opacity="0.88"/>
+  <rect x="1118" y="134" width="336" height="260" rx="30" fill="#ffffff" opacity="0.74"/>
+  <rect x="1160" y="176" width="252" height="138" rx="18" fill="#ddecf0"/>
+  <circle cx="1220" cy="244" r="34" fill="#ed1c24" opacity="0.86"/>
+  <rect x="1278" y="216" width="94" height="18" rx="9" fill="#9fbcc3"/>
+  <rect x="1278" y="253" width="112" height="18" rx="9" fill="#bdd0d5"/>
+  <rect x="1050" y="528" width="400" height="88" rx="44" fill="#ffffff" opacity="0.56"/>
+  <circle cx="1124" cy="572" r="42" fill="#ed1c24" opacity="0.85"/>
+  <path d="M1112 573 h24 M1124 561 v24" stroke="#fff" stroke-width="12" stroke-linecap="round"/>
+  <rect x="1188" y="548" width="166" height="18" rx="9" fill="#76949b"/>
+  <rect x="1188" y="584" width="205" height="18" rx="9" fill="#9db5bb"/>
+  <g opacity="0.9">
+    <circle cx="720" cy="300" r="78" fill="#24424b"/>
+    <rect x="662" y="382" width="122" height="258" rx="40" fill="#ffffff"/>
+    <rect x="635" y="420" width="58" height="172" rx="29" fill="#24424b"/>
+    <rect x="755" y="420" width="58" height="172" rx="29" fill="#24424b"/>
+    <rect x="682" y="640" width="38" height="150" rx="19" fill="#24424b"/>
+    <rect x="735" y="640" width="38" height="150" rx="19" fill="#24424b"/>
+    <path d="M692 410 h74 v160 h-74z" fill="#e7f2f4"/>
+    <path d="M729 420 v126" stroke="#ed1c24" stroke-width="12" stroke-linecap="round"/>
+    <path d="M686 482 h86" stroke="#ed1c24" stroke-width="12" stroke-linecap="round"/>
+  </g>
+  <g opacity="0.7">
+    <circle cx="930" cy="350" r="56" fill="#38616b"/>
+    <rect x="883" y="411" width="96" height="196" rx="34" fill="#f7fbfb"/>
+    <rect x="856" y="448" width="46" height="132" rx="23" fill="#38616b"/>
+    <rect x="959" y="448" width="46" height="132" rx="23" fill="#38616b"/>
+    <rect x="899" y="604" width="30" height="118" rx="15" fill="#38616b"/>
+    <rect x="941" y="604" width="30" height="118" rx="15" fill="#38616b"/>
+  </g>
+  <circle cx="320" cy="710" r="18" fill="#ed1c24" opacity="0.7"/>
+  <circle cx="372" cy="742" r="10" fill="#ed1c24" opacity="0.45"/>
+  <circle cx="430" cy="698" r="13" fill="#ed1c24" opacity="0.42"/>
+</svg>
