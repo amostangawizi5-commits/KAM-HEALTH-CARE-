@@ -2,6 +2,7 @@ const path = require('path');
 const net = require('net');
 const dotenv = require('dotenv');
 const { Sequelize } = require('sequelize');
+const pg = require('pg');
 
 dotenv.config({ path: path.resolve(__dirname, '../../.env') });
 
@@ -15,6 +16,7 @@ class IPv4Socket extends net.Socket {
 
 const databaseOptions = {
   dialect: 'postgres',
+  dialectModule: pg,
   logging: process.env.DB_LOGGING === 'true' ? console.log : false,
   ...(databaseUrl && { dialectOptions: { stream: () => new IPv4Socket() } }),
   pool: {
