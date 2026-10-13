@@ -1,5 +1,5 @@
 {
-  "installCommand": "npm ci --prefix frontend && npm ci --prefix backend",
+  "installCommand": "npm install --prefix frontend && npm install --prefix backend",
   "buildCommand": "npm run build --prefix frontend",
   "outputDirectory": "frontend/dist",
   "functions": {
