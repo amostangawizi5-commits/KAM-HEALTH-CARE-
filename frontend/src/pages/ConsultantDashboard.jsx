@@ -5,7 +5,7 @@ import { useAuth } from '../hooks/useAuth';
 import { consultantService } from '../services/api';
 
 const textDark = '#1a2332';
-const apiUrl = import.meta.env.VITE_API_URL || 'http://localhost:5000/api';
+const apiUrl = import.meta.env.VITE_API_URL || '/api';
 const socketUrl = apiUrl.replace(/\/api\/?$/, '');
 
 const sidebarItems = [
