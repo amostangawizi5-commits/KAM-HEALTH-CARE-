@@ -188,13 +188,9 @@ const ReceptionistDashboard = () => {
   };
 
   const handleRegisterComplete = async (patient) => {
-    const nameParts = patient.name.trim().split(/\s+/);
-    const firstName = nameParts.shift() || patient.name;
-    const lastName = nameParts.join(' ') || '-';
-
     const patientResponse = await patientService.create({
-      firstName,
-      lastName,
+      firstName: patient.firstName.trim(),
+      lastName: patient.lastName.trim(),
       dateOfBirth: ageToDateOfBirth(patient.age),
       gender: String(patient.gender || 'OTHER').toUpperCase(),
       phone: patient.phone,

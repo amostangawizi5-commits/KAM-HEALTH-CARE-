@@ -8,7 +8,8 @@ const PatientRegistration = ({
   onViewQueue,
 }) => {
   const [formData, setFormData] = useState({
-    fullName: '',
+    firstName: '',
+    lastName: '',
     age: '',
     gender: 'Male',
     phone: '',
@@ -35,13 +36,14 @@ const PatientRegistration = ({
     setIsSaving(true);
     
     const patient = {
-      name: formData.fullName,
+      name: [formData.firstName.trim(), formData.lastName.trim()].filter(Boolean).join(' '),
       queueNumber: nextQueueNumber || 'Q-001',
       status: 'WAITING',
       statusColor: '#15803d',
       registrationDate: new Date().toISOString().split('T')[0],
       reason: formData.reason || 'General visit',
-      ...formData
+      ...formData,
+      phone: `+255${formData.phone.replace(/\D/g, '').replace(/^255/, '').replace(/^0/, '')}`
     };
     
     try {
@@ -107,17 +109,35 @@ const PatientRegistration = ({
         <div>
           <h4 className="h6 fw-bold text-secondary text-uppercase mb-3">Personal Information</h4>
           
-          <div className="mb-3">
-            <label className="form-label fw-semibold">Full Name</label>
-            <input
-              type="text"
-              name="fullName"
-              placeholder="John Doe"
-              value={formData.fullName}
-              onChange={handleChange}
-              required
-              className="form-control"
-            />
+          <div className="row g-3 mb-3">
+            <div className="col-12 col-md-4">
+              <label className="form-label fw-semibold" htmlFor="patient-first-name">First Name</label>
+              <input
+                id="patient-first-name"
+                type="text"
+                name="firstName"
+                autoComplete="given-name"
+                placeholder="John"
+                value={formData.firstName}
+                onChange={handleChange}
+                required
+                className="form-control form-control-sm"
+              />
+            </div>
+            <div className="col-12 col-md-4">
+              <label className="form-label fw-semibold" htmlFor="patient-last-name">Last Name</label>
+              <input
+                id="patient-last-name"
+                type="text"
+                name="lastName"
+                autoComplete="family-name"
+                placeholder="Doe"
+                value={formData.lastName}
+                onChange={handleChange}
+                required
+                className="form-control form-control-sm"
+              />
+            </div>
           </div>
 
           <div className="row g-3">
@@ -153,15 +173,20 @@ const PatientRegistration = ({
           <div className="row g-3 mt-1">
             <div className="col-12 col-md-6">
               <label className="form-label fw-semibold">Phone Number</label>
-              <input
-                type="tel"
-                name="phone"
-                placeholder="0712 345 678"
-                value={formData.phone}
-                onChange={handleChange}
-                required
-                className="form-control"
-              />
+              <div className="input-group">
+                <span className="input-group-text">+255</span>
+                <input
+                  type="tel"
+                  name="phone"
+                  inputMode="tel"
+                  placeholder="712 345 678"
+                  value={formData.phone}
+                  onChange={handleChange}
+                  required
+                  className="form-control"
+                  aria-label="Phone number without country code"
+                />
+              </div>
             </div>
             <div className="col-12 col-md-6">
               <label className="form-label fw-semibold">National ID</label>
