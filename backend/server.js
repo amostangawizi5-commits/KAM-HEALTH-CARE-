@@ -7,12 +7,16 @@ const morgan = require('morgan');
 const { createServer } = require('http');
 const { Server } = require('socket.io');
 const path = require('path');
+const fs = require('fs');
 const { sequelize } = require('./src/models');
 
 dotenv.config();
 
 const app = express();
 const httpServer = createServer(app);
+const frontendDistPath = path.resolve(__dirname, '../frontend/dist');
+const frontendIndexPath = path.join(frontendDistPath, 'index.html');
+const hasFrontendBuild = fs.existsSync(frontendIndexPath);
 
 // CORS Configuration
 const defaultClientOrigins = [
@@ -83,6 +87,9 @@ app.use(express.urlencoded({ extended: true, limit: '10mb' }));
 
 // Serve static files (HTML, CSS, JS)
 app.use(express.static(path.join(__dirname, 'public')));
+if (hasFrontendBuild) {
+  app.use(express.static(frontendDistPath));
+}
 
 // Socket.IO connection
 io.on('connection', (socket) => {
@@ -102,6 +109,10 @@ app.set('io', io);
 
 // Root route
 app.get('/', (req, res) => {
+  if (hasFrontendBuild) {
+    return res.sendFile(frontendIndexPath);
+  }
+
   res.json({
     name: 'KazimiliCare API',
     version: '1.0.0',
@@ -148,6 +159,16 @@ app.use('/api/doctor', doctorRoutes);
 app.use('/api/pharmacy', pharmacyRoutes);
 app.use('/api/cashier', cashierRoutes);
 app.use('/api/admin', adminRoutes);
+
+if (hasFrontendBuild) {
+  app.get('*', (req, res, next) => {
+    if (req.path.startsWith('/api')) {
+      return next();
+    }
+
+    return res.sendFile(frontendIndexPath);
+  });
+}
 
 // 404 handler
 app.use((req, res) => {
