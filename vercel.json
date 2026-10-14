@@ -1,6 +1,7 @@
 {
-  "installCommand": "npm install --include=dev --prefix frontend && npm install --include=dev --prefix backend",
-  "buildCommand": "npm run build --prefix frontend",
+  "framework": "vite",
+  "installCommand": "if [ -f frontend/package.json ]; then npm install --include=dev --prefix frontend && npm install --include=dev --prefix backend; else npm install --include=dev --prefix ../frontend && npm install --include=dev; fi",
+  "buildCommand": "if [ -f frontend/package.json ]; then npm run build --prefix frontend; else npm run build --prefix ../frontend && mkdir -p frontend && cp -R ../frontend/dist frontend/dist; fi",
   "outputDirectory": "frontend/dist",
   "functions": {
     "api/[...path].js": {
