@@ -20,6 +20,7 @@ const hasFrontendBuild = fs.existsSync(frontendIndexPath);
 
 // CORS Configuration
 const defaultClientOrigins = [
+  'https://kam-health-care.vercel.app',
   'http://localhost:3000',
   'http://localhost:3001',
   'http://localhost:3002',
