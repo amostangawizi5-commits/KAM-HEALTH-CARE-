@@ -6,12 +6,15 @@
   "functions": {
     "api/[...path].js": {
       "includeFiles": "backend/public/**"
+    },
+    "api/gateway.js": {
+      "includeFiles": "backend/public/**"
     }
   },
   "routes": [
     {
       "src": "/api/(.*)",
-      "dest": "/api/$1"
+      "dest": "/api/gateway?__originalPath=$1"
     },
     {
       "handle": "filesystem"
