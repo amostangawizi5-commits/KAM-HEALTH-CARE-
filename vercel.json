@@ -11,17 +11,14 @@
       "includeFiles": "backend/public/**"
     }
   },
-  "routes": [
+  "rewrites": [
     {
-      "src": "/api/(.*)",
-      "dest": "/api/gateway?__originalPath=$1"
+      "source": "/api/:path*",
+      "destination": "/api/gateway?__originalPath=:path*"
     },
     {
-      "handle": "filesystem"
-    },
-    {
-      "src": "/(.*)",
-      "dest": "/index.html"
+      "source": "/((?!api/).*)",
+      "destination": "/index.html"
     }
   ]
 }
